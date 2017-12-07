@@ -20,7 +20,7 @@ func main() {
 		banks = append(banks, n)
 	}
 
-	fmt.Println(banks)
-	nIterations := memory.RebalanceRepeatLoop(banks)
+	stateHistory := memory.NewStateHistory()
+	nIterations := memory.RebalanceRepeatLoop(stateHistory, banks)
 	fmt.Println(nIterations)
 }

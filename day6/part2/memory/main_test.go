@@ -17,7 +17,8 @@ var rebalanceLoopTests = []struct {
 func TestRebalanceRepeatLoop(t *testing.T) {
 	for _, tt := range rebalanceLoopTests {
 		t.Run(fmt.Sprintf("RebalanceLoop(%v)", tt.banks), func(t *testing.T) {
-			actual := memory.RebalanceRepeatLoop(tt.banks)
+			stateHistory := memory.NewStateHistory()
+			actual := memory.RebalanceRepeatLoop(stateHistory, tt.banks)
 			if actual != tt.expected {
 				t.Errorf("RebalanceLoop(%v): expected %d, got %d", tt.banks, tt.expected, actual)
 			}

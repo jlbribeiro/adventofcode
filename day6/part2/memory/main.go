@@ -1,73 +1,79 @@
 package memory
 
-// PreviousStates stores every seen state, so they can be later referenced.
-type PreviousStates struct {
-	states [][]int
+// State associates a given banks' state with an iteration occurrence.
+type State struct {
+	Banks     []int
+	Iteration int
 }
 
-// NewPreviousStates returns a PreviousStates instance.
-func NewPreviousStates() *PreviousStates {
-	states := make([][]int, 0, 1)
-	return &PreviousStates{states}
+// NewState returns an instance of a memory state.
+func NewState(banks []int, iteration int) *State {
+	return &State{
+		Banks:     append([]int(nil), banks...),
+		Iteration: iteration,
+	}
+}
+
+// HistoryKeeper is an interface for something capable of
+// storing memory states over time.
+type HistoryKeeper interface {
+	Add(*State)
+	Find([]int) (*State, bool)
+}
+
+// StateHistory stores every seen state, so they can be later referenced.
+type StateHistory struct {
+	states []*State
+}
+
+// NewStateHistory returns a StateHistory instance.
+func NewStateHistory() *StateHistory {
+	states := make([]*State, 0, 0)
+	return &StateHistory{states}
 }
 
 // Add stores a given state for future reference.
-func (p *PreviousStates) Add(state []int) {
-	stateCopy := append([]int(nil), state...)
-	p.states = append(p.states, stateCopy)
+func (p *StateHistory) Add(state *State) {
+	p.states = append(p.states, state)
 }
 
-// Find returns the index of a given state, if it has been seen before;
-// otherwise returns -1.
-func (p *PreviousStates) Find(state []int) int {
-	for index, prevState := range p.states {
+// Find returns a reference to a state (and ok = true) if the memory banks'
+// arrangement has previously occurred; otherwise returns (nil, false).
+func (p *StateHistory) Find(banks []int) (*State, bool) {
+	for _, prevState := range p.states {
 		// This shouldn't happen, but...
-		if len(state) != len(prevState) {
+		if len(banks) != len(prevState.Banks) {
 			continue
 		}
 
 		var i int
-		for i = 0; i < len(prevState); i++ {
-			if prevState[i] != state[i] {
+		for i = 0; i < len(prevState.Banks); i++ {
+			if prevState.Banks[i] != banks[i] {
 				break
 			}
 		}
 
-		if i == len(prevState) {
-			return index
+		if i == len(prevState.Banks) {
+			return prevState, true
 		}
 	}
 
-	return -1
-}
-
-// Remove _removes_ a previously stored state in index.
-func (p *PreviousStates) Remove(index int) {
-	p.states = append(p.states[:index], p.states[index+1:]...)
+	return nil, false
 }
 
 // RebalanceRepeatLoop calculates how many iterations go by before a rebalance loop
 // is detected.
-func RebalanceRepeatLoop(originalBanks []int) int {
+func RebalanceRepeatLoop(stateHistory HistoryKeeper, originalBanks []int) int {
 	banks := append([]int(nil), originalBanks...)
-
-	prevStates := NewPreviousStates()
 
 	nIterations := 0
 
-	loopFirstSeenAt := -1
-	loopIndex := -1
 	for {
-		if stateIndex := prevStates.Find(banks); stateIndex != -1 {
-			if loopFirstSeenAt == -1 {
-				loopFirstSeenAt = nIterations
-				loopIndex = stateIndex
-			} else if loopIndex == stateIndex {
-				return nIterations - loopFirstSeenAt
-			}
+		if prevState, ok := stateHistory.Find(banks); ok {
+			return nIterations - prevState.Iteration
 		}
 
-		prevStates.Add(banks)
+		stateHistory.Add(NewState(banks, nIterations))
 
 		maxIndex := 0
 		max := banks[maxIndex]

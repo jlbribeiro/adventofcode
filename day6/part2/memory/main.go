@@ -15,7 +15,7 @@ func NewState(banks []int, iteration int) *State {
 }
 
 // HistoryKeeper is an interface for something capable of
-// storing memory states over time.
+// storing memory banks' states over time.
 type HistoryKeeper interface {
 	Add(*State)
 	Find([]int) (*State, bool)
@@ -38,7 +38,7 @@ func (p *StateHistory) Add(state *State) {
 }
 
 // Find returns a reference to a state (and ok = true) if the memory banks'
-// arrangement has previously occurred; otherwise returns (nil, false).
+// arrangement has previously occurred; otherwise returns (nil, ok = false).
 func (p *StateHistory) Find(banks []int) (*State, bool) {
 	for _, prevState := range p.states {
 		// This shouldn't happen, but...
@@ -61,37 +61,48 @@ func (p *StateHistory) Find(banks []int) (*State, bool) {
 	return nil, false
 }
 
-// RebalanceRepeatLoop calculates how many iterations go by before a rebalance loop
-// is detected.
+func rebalanceBanks(banks []int) {
+	// Determine the bank with the most blocks;
+	// ties are solved by picking the first bank with most blocks.
+	maxIndex := 0
+	maxBlocks := banks[maxIndex]
+	for i := 1; i < len(banks); i++ {
+		if banks[i] > maxBlocks {
+			maxIndex = i
+			maxBlocks = banks[maxIndex]
+		}
+	}
+
+	// Reset the bank before distribution.
+	banks[maxIndex] = 0
+
+	// Start distribution in the next block.
+	maxIndex++
+
+	// Cycle the banks until no more blocks are left.
+	for maxBlocks > 0 {
+		banks[maxIndex%len(banks)]++
+		maxIndex++
+		maxBlocks--
+	}
+}
+
+// RebalanceRepeatLoop calculates how many iterations the first detected loop
+// takes to be repeated.
 func RebalanceRepeatLoop(stateHistory HistoryKeeper, originalBanks []int) int {
+	// Copy the original banks before running the rebalance.
 	banks := append([]int(nil), originalBanks...)
 
-	nIterations := 0
-
-	for {
+	for nIterations := 0; ; nIterations++ {
+		// This state has previously occurred; it will take
+		//   nIterations - prevState.Iteration
+		// to happen again.
 		if prevState, ok := stateHistory.Find(banks); ok {
 			return nIterations - prevState.Iteration
 		}
 
 		stateHistory.Add(NewState(banks, nIterations))
 
-		maxIndex := 0
-		max := banks[maxIndex]
-
-		for i := 1; i < len(banks); i++ {
-			if banks[i] > max {
-				maxIndex = i
-				max = banks[maxIndex]
-			}
-		}
-
-		banks[maxIndex] = 0
-		for max > 0 {
-			banks[(maxIndex+1)%len(banks)]++
-			maxIndex++
-			max--
-		}
-
-		nIterations++
+		rebalanceBanks(banks)
 	}
 }

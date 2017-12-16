@@ -26,7 +26,7 @@ func main() {
 	loopFound := false
 	for i := 1; i <= nDances; i++ {
 		dancers.Dance(steps)
-		if !loopFound && dancers.Alignment() == initialAlignment {
+		if !loopFound && dancers.AlignmentEqualTo(initialAlignment) {
 			loopFound = true
 
 			// We get to the initialAlignment after i dances;
@@ -40,5 +40,5 @@ func main() {
 		}
 	}
 
-	fmt.Println(dancers.Alignment())
+	fmt.Println(dancers)
 }

@@ -21,6 +21,10 @@ func NewDancers(nDancers int) *Dancers {
 	}
 }
 
+func (d *Dancers) String() string {
+	return string(d.Alignment())
+}
+
 func (d *Dancers) Dance(steps []string) {
 	for _, step := range steps {
 		switch step[0] {
@@ -34,14 +38,22 @@ func (d *Dancers) Dance(steps []string) {
 	}
 }
 
-func (d *Dancers) Alignment() string {
-	s := ""
+func (d *Dancers) Alignment() []rune {
+	return append([]rune(nil), d.programs...)
+}
 
-	for _, program := range d.programs {
-		s += string(program)
+func (d *Dancers) AlignmentEqualTo(alignment []rune) bool {
+	if len(d.programs) != len(alignment) {
+		return false
 	}
 
-	return s
+	for i := range alignment {
+		if alignment[i] != d.programs[i] {
+			return false
+		}
+	}
+
+	return true
 }
 
 func (d *Dancers) Spin(step string) {

@@ -29,7 +29,7 @@ func TestDancersDance(t *testing.T) {
 		t.Run(tc.name, func(t *testing.T) {
 			dancers := promenade.NewDancers(tc.nDancers)
 			dancers.Dance(tc.steps)
-			actual := dancers.Alignment()
+			actual := string(dancers.Alignment())
 
 			if actual != tc.expected {
 				t.Errorf("Dancers.Dance(%s): expected %s, got %s", tc.name, tc.expected, actual)

@@ -8,9 +8,9 @@ import (
 
 var generatorNextTT = []struct {
 	name             string
-	memA, memB       int
-	factorA, factorB int
-	expected         int
+	memA, memB       int64
+	factorA, factorB int64
+	expected         int64
 }{
 	{"provided example", 65, 8921, 16807, 48271, 588},
 }

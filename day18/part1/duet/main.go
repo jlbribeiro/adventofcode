@@ -57,7 +57,7 @@ func (m *MusicPlayer) Play(instructions []string) int {
 				return m.lastSound
 			}
 		case "jgz":
-			if m.registers[rune(X[0])] > 0 {
+			if m.ValueOf(X) > 0 {
 				i += m.ValueOf(Y) - 1
 			}
 		}

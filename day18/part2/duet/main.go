@@ -101,7 +101,8 @@ func (m *MusicPlayer) Play(instructions []string) int {
 	instructionParts := strings.Split(instruction, " ")
 	instrCode := instructionParts[0]
 
-	X := rune(instructionParts[1][0])
+	X := instructionParts[1]
+	registerX := rune(instructionParts[1][0])
 
 	Y := ""
 	if len(instructionParts) > 2 {
@@ -110,15 +111,15 @@ func (m *MusicPlayer) Play(instructions []string) int {
 
 	switch instrCode {
 	case "snd":
-		m.Send(m.ValueOf(string(X)))
+		m.Send(m.ValueOf(X))
 	case "set":
-		m.registers[X] = m.ValueOf(Y)
+		m.registers[registerX] = m.ValueOf(Y)
 	case "add":
-		m.registers[X] += m.ValueOf(Y)
+		m.registers[registerX] += m.ValueOf(Y)
 	case "mul":
-		m.registers[X] *= m.ValueOf(Y)
+		m.registers[registerX] *= m.ValueOf(Y)
 	case "mod":
-		m.registers[X] %= m.ValueOf(Y)
+		m.registers[registerX] %= m.ValueOf(Y)
 	case "rcv":
 		if len(m.queue) == 0 {
 			fmt.Println(fmt.Sprintf("[%v](%v) Waiting for a value.", m.id, m.iPointer))
@@ -127,10 +128,10 @@ func (m *MusicPlayer) Play(instructions []string) int {
 
 		fmt.Println(fmt.Sprintf("[%v](%v) About to read a value from the queue(len=%v).", m.id, m.iPointer, len(m.queue)))
 
-		m.registers[X] = m.queue[0]
+		m.registers[registerX] = m.queue[0]
 		m.queue = m.queue[1:]
 	case "jgz":
-		if m.ValueOf(string(X)) > 0 {
+		if m.ValueOf(X) > 0 {
 			m.iPointer += m.ValueOf(Y)
 			return m.iPointer
 		}

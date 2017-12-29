@@ -1,0 +1,21 @@
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"os"
+
+	"github.com/jlbribeiro/adventofcode/day24/part2/bridges"
+)
+
+func main() {
+	pieces := []string(nil)
+	scanner := bufio.NewScanner(os.Stdin)
+	for scanner.Scan() {
+		piece := scanner.Text()
+		pieces = append(pieces, piece)
+	}
+
+	bb := bridges.NewBridgeBuilder(pieces)
+	fmt.Println(bb.LongestStrongestBridge())
+}

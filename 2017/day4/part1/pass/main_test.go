@@ -3,7 +3,7 @@ package pass_test
 import (
 	"testing"
 
-	"git.jlbribeiro.com/adventofcode/day4/part1/pass"
+	"git.jlbribeiro.com/adventofcode/2017/day4/part1/pass"
 )
 
 var validPassphraseTests = []struct {

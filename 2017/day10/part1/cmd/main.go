@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/jlbribeiro/adventofcode/day10/part1/knothash"
+	"github.com/jlbribeiro/adventofcode/2017/day10/part1/knothash"
 )
 
 func main() {

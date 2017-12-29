@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"git.jlbribeiro.com/adventofcode/day5/part1/maze"
+	"git.jlbribeiro.com/adventofcode/2017/day5/part1/maze"
 )
 
 var walkTests = []struct {

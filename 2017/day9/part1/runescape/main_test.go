@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/jlbribeiro/adventofcode/day9/part1/runescape"
+	"github.com/jlbribeiro/adventofcode/2017/day9/part1/runescape"
 )
 
 var scoreTest = []struct {

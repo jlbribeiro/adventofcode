@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/jlbribeiro/adventofcode/day14/part1/knothash"
+	"github.com/jlbribeiro/adventofcode/2017/day14/part1/knothash"
 )
 
 var hashTests = []struct {

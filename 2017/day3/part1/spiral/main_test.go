@@ -3,7 +3,7 @@ package spiral_test
 import (
 	"testing"
 
-	. "github.com/jlbribeiro/adventofcode/day3/part1/spiral"
+	. "github.com/jlbribeiro/adventofcode/2017/day3/part1/spiral"
 )
 
 var manhattanDistanceTests = []struct {

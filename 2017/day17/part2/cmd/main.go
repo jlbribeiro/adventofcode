@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/jlbribeiro/adventofcode/day17/part2/spinlock"
+	"github.com/jlbribeiro/adventofcode/2017/day17/part2/spinlock"
 )
 
 func main() {

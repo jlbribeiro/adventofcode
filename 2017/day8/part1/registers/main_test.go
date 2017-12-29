@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/jlbribeiro/adventofcode/day8/part1/registers"
+	"github.com/jlbribeiro/adventofcode/2017/day8/part1/registers"
 )
 
 var cpuGetLargestRegisterValueTests = []struct {

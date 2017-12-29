@@ -5,7 +5,7 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/jlbribeiro/adventofcode/day19/part2/tubes"
+	"github.com/jlbribeiro/adventofcode/2017/day19/part2/tubes"
 )
 
 func main() {

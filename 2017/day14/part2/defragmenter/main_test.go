@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/jlbribeiro/adventofcode/day14/part2/defragmenter"
+	"github.com/jlbribeiro/adventofcode/2017/day14/part2/defragmenter"
 )
 
 var diskRegionsFromHashTests = []struct {

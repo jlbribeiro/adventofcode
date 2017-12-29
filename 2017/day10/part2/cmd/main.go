@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/jlbribeiro/adventofcode/day10/part2/knothash"
+	"github.com/jlbribeiro/adventofcode/2017/day10/part2/knothash"
 )
 
 func main() {

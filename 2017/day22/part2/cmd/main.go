@@ -5,7 +5,7 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/jlbribeiro/adventofcode/day22/part2/virus"
+	"github.com/jlbribeiro/adventofcode/2017/day22/part2/virus"
 )
 
 func main() {

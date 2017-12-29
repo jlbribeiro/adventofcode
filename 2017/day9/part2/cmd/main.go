@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/jlbribeiro/adventofcode/day9/part2/runescape"
+	"github.com/jlbribeiro/adventofcode/2017/day9/part2/runescape"
 )
 
 func main() {

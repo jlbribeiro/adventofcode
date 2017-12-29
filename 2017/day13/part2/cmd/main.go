@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/jlbribeiro/adventofcode/day13/part2/firewall"
+	"github.com/jlbribeiro/adventofcode/2017/day13/part2/firewall"
 )
 
 func main() {

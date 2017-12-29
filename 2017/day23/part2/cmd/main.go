@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/jlbribeiro/adventofcode/day23/part2/coprocessor"
+	"github.com/jlbribeiro/adventofcode/2017/day23/part2/coprocessor"
 )
 
 func main() {

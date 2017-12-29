@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/jlbribeiro/adventofcode/day13/part1/firewall"
+	"github.com/jlbribeiro/adventofcode/2017/day13/part1/firewall"
 )
 
 type testLayer struct {

@@ -3,7 +3,7 @@ package defragmenter
 import (
 	"fmt"
 
-	"github.com/jlbribeiro/adventofcode/day14/part2/knothash"
+	"github.com/jlbribeiro/adventofcode/2017/day14/part2/knothash"
 )
 
 func DiskUsageFromHash(key string) int {

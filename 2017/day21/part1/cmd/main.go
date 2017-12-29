@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/jlbribeiro/adventofcode/day21/part1/fractal"
+	"github.com/jlbribeiro/adventofcode/2017/day21/part1/fractal"
 )
 
 func main() {

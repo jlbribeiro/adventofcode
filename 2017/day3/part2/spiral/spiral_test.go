@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"git.jlbribeiro.com/adventofcode/day3/part2/spiral"
+	"git.jlbribeiro.com/adventofcode/2017/day3/part2/spiral"
 )
 
 var largerSpiralSumTests = []struct {

@@ -3,7 +3,7 @@ package tubes_test
 import (
 	"testing"
 
-	"github.com/jlbribeiro/adventofcode/day19/part1/tubes"
+	"github.com/jlbribeiro/adventofcode/2017/day19/part1/tubes"
 )
 
 var walkTests = []struct {

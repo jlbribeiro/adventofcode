@@ -3,7 +3,7 @@ package bridges_test
 import (
 	"testing"
 
-	"github.com/jlbribeiro/adventofcode/day24/part1/bridges"
+	"github.com/jlbribeiro/adventofcode/2017/day24/part1/bridges"
 )
 
 var strongestBridgeTests = []struct {

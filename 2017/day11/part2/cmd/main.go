@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/jlbribeiro/adventofcode/day11/part2/hexed"
+	"github.com/jlbribeiro/adventofcode/2017/day11/part2/hexed"
 )
 
 func main() {

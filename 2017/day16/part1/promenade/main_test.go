@@ -3,7 +3,7 @@ package promenade_test
 import (
 	"testing"
 
-	"github.com/jlbribeiro/adventofcode/day16/part1/promenade"
+	"github.com/jlbribeiro/adventofcode/2017/day16/part1/promenade"
 )
 
 var dancersDanceTT = []struct {

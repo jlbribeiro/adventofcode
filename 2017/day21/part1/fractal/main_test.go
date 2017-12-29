@@ -3,7 +3,7 @@ package fractal_test
 import (
 	"testing"
 
-	"github.com/jlbribeiro/adventofcode/day21/part1/fractal"
+	"github.com/jlbribeiro/adventofcode/2017/day21/part1/fractal"
 )
 
 func TestMatrixRotations(t *testing.T) {

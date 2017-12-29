@@ -8,7 +8,7 @@ import (
 	"sort"
 	"strconv"
 
-	"github.com/jlbribeiro/adventofcode/day20/part2/particles/xmath"
+	"github.com/jlbribeiro/adventofcode/2017/day20/part2/particles/xmath"
 )
 
 const N_DIMS = 3

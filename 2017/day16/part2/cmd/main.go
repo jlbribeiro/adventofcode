@@ -6,7 +6,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/jlbribeiro/adventofcode/day16/part2/promenade"
+	"github.com/jlbribeiro/adventofcode/2017/day16/part2/promenade"
 )
 
 func main() {

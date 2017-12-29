@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/jlbribeiro/adventofcode/day12/part1/digitalplumber"
+	"github.com/jlbribeiro/adventofcode/2017/day12/part1/digitalplumber"
 )
 
 var nConnectionsOfTests = []struct {

@@ -3,7 +3,7 @@ package halting_test
 import (
 	"testing"
 
-	"github.com/jlbribeiro/adventofcode/day25/part1/halting"
+	"github.com/jlbribeiro/adventofcode/2017/day25/part1/halting"
 )
 
 var checksumTests = []struct {

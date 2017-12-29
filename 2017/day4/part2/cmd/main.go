@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"git.jlbribeiro.com/adventofcode/day4/part2/pass"
+	"git.jlbribeiro.com/adventofcode/2017/day4/part2/pass"
 )
 
 func main() {

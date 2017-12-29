@@ -3,7 +3,7 @@ package spinlock_test
 import (
 	"testing"
 
-	"github.com/jlbribeiro/adventofcode/day17/part1/spinlock"
+	"github.com/jlbribeiro/adventofcode/2017/day17/part1/spinlock"
 )
 
 var spinlockRunTT = []struct {

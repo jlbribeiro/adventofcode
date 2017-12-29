@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/jlbribeiro/adventofcode/day15/part2/generators"
+	"github.com/jlbribeiro/adventofcode/2017/day15/part2/generators"
 )
 
 func main() {

@@ -3,7 +3,7 @@ package particles_test
 import (
 	"testing"
 
-	"github.com/jlbribeiro/adventofcode/day20/part1/particles"
+	"github.com/jlbribeiro/adventofcode/2017/day20/part1/particles"
 )
 
 var closestToOriginTests = []struct {

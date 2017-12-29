@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/jlbribeiro/adventofcode/day12/part2/digitalplumber"
+	"github.com/jlbribeiro/adventofcode/2017/day12/part2/digitalplumber"
 )
 
 func main() {

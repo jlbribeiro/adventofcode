@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/jlbribeiro/adventofcode/day18/part1/duet"
+	"github.com/jlbribeiro/adventofcode/2017/day18/part1/duet"
 )
 
 var probSomethingTT = []struct {

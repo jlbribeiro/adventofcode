@@ -3,7 +3,7 @@ package generators_test
 import (
 	"testing"
 
-	"github.com/jlbribeiro/adventofcode/day15/part1/generators"
+	"github.com/jlbribeiro/adventofcode/2017/day15/part1/generators"
 )
 
 var generatorNextTT = []struct {

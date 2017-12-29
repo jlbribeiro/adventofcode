@@ -3,7 +3,7 @@ package virus_test
 import (
 	"testing"
 
-	"github.com/jlbribeiro/adventofcode/day22/part1/virus"
+	"github.com/jlbribeiro/adventofcode/2017/day22/part1/virus"
 )
 
 func TestAntiVirusInfectionsCount(t *testing.T) {

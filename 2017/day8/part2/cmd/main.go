@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/jlbribeiro/adventofcode/day8/part2/registers"
+	"github.com/jlbribeiro/adventofcode/2017/day8/part2/registers"
 )
 
 func main() {

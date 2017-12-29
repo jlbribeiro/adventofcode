@@ -5,7 +5,7 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/jlbribeiro/adventofcode/day25/part1/halting"
+	"github.com/jlbribeiro/adventofcode/2017/day25/part1/halting"
 )
 
 func main() {

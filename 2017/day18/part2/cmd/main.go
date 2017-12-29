@@ -6,7 +6,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/jlbribeiro/adventofcode/day18/part2/duet"
+	"github.com/jlbribeiro/adventofcode/2017/day18/part2/duet"
 )
 
 func main() {

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/jlbribeiro/adventofcode/day11/part2/hexed"
+	"github.com/jlbribeiro/adventofcode/2017/day11/part2/hexed"
 )
 
 var minStepsTests = []struct {

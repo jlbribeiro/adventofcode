@@ -1,7 +1,7 @@
 # Advent of Code solutions
 
 [@jlbribeiro](https://jlbribeiro.com) December's (somewhat productive)
-procrastination.
+procrastination: [Advent of Code][aoc].
 
 This is not code that I'm particularly proud of: some of the solutions are OK,
 others were _quick-and-dirty_ solutions to the problem (even if that meant
@@ -13,3 +13,5 @@ perfectionism and "code shyness".
 **So here they are.**
 
 Any suggestions are welcome.
+
+[aoc]: https://adventofcode.com

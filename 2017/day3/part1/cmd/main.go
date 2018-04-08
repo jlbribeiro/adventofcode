@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"git.jlbribeiro.com/adventofcode/2017/day3/part1/spiral"
+	"github.com/jlbribeiro/adventofcode/2017/day3/part1/spiral"
 )
 
 func main() {

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"git.jlbribeiro.com/adventofcode/2017/day6/part2/memory"
+	"github.com/jlbribeiro/adventofcode/2017/day6/part2/memory"
 )
 
 var rebalanceLoopTests = []struct {

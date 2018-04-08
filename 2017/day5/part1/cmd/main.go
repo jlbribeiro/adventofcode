@@ -6,7 +6,7 @@ import (
 	"os"
 	"strconv"
 
-	"git.jlbribeiro.com/adventofcode/2017/day5/part1/maze"
+	"github.com/jlbribeiro/adventofcode/2017/day5/part1/maze"
 )
 
 func main() {

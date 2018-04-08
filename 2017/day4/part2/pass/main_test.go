@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"git.jlbribeiro.com/adventofcode/2017/day4/part2/pass"
+	"github.com/jlbribeiro/adventofcode/2017/day4/part2/pass"
 )
 
 var validPassphraseTests = []struct {

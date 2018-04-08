@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"io"
 
-	"git.jlbribeiro.com/adventofcode/2017/day6/part2/memory"
+	"github.com/jlbribeiro/adventofcode/2017/day6/part2/memory"
 )
 
 func main() {
